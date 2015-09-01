@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+		http://www.liquibase.org/xml/ns/dbchangelog 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd 
+		http://www.liquibase.org/xml/ns/dbchangelog-ext 
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+		
+	<changeSet author="system" id="v1-0001-1">
+    	<comment>Create sample table</comment>
+        <createTable tableName="sample" remarks="Sample">
+        	<column name="id" type="NUMERIC" remarks="Record identifier">
+        		<constraints nullable="false" primaryKey="true" />
+        	</column>
+            <column name="hello" type="VARCHAR(200)" remarks="Hello">
+            	<constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+	</changeSet>
+    <changeSet author="system" id="v1-0001-2">
+    	<comment>Loading data</comment>
+    	<loadUpdateData tableName="sample" primaryKey="id" file="db02.csv" >
+    		<column name="id" type="NUMERIC" />    	
+    	</loadUpdateData>
+    </changeSet>	
+		
+</databaseChangeLog>
