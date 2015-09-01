@@ -59,7 +59,6 @@
             	<artifactId>jersey-client</artifactId>
             	<version>2.19</version>
         	</dependency>		
-  			<!-- The Apache Commons CSV library provides a simple interface for reading and writing CSV files of various types. -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-csv</artifactId>
